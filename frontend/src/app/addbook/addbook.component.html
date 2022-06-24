@@ -1,0 +1,36 @@
+
+<app-sidebar></app-sidebar>
+<form (ngSubmit)="addBook(addbook)" #addbook="ngForm">
+    <div class="form-row">
+        <div class="form-group col-4">
+
+        </div>
+        <div class="form-group col-4 ">
+           <div class="card">
+            <div class="card-header" style="text-align: center;">ADD BOOK</div>
+            <div class="card-body" style="padding:2em" >
+                <div class="items" style="text-align:justify" >
+                    <label for="" style="padding-right:1em">Book Name</label>
+                    <input type="text" style="width:100%"  name="bname" [(ngModel)]="book.bookName">
+                </div>
+                <div class="items" style="text-align:justify" >
+                    <label for="" style="padding-right:1em">Author Name</label>
+                    <input type="text" style="width:100%" name="author" [(ngModel)]="book.author" >
+                </div>
+                <div class="items" style="text-align:justify" >
+                    <label for="" style="padding-right:1em" >Cover image Url</label>
+                    <input type="text" style="width:100%" name="image" [(ngModel)]="book.imageUrl">
+                </div>
+                <div class="text-center" style="width: 100%;padding-top:3em;align-content: center;">
+                    <button type="submit"
+                      class="btn btn-success btn-block  gradient-custom-4 text-body">SUBMIT</button>
+                  </div>
+            </div>
+           </div>
+        </div>
+        <div class="form-group col-4">
+
+        </div>
+    </div>
+</form>
+<app-footer></app-footer>

@@ -1,0 +1,27 @@
+<nav class="navbar  navbar-expand-lg sticky-top py-0  navbar-light"  style="background-color: #5da4d6;">
+    <div class="container">
+      <a class="navbar-brand ms-0" href="#"><img src="assets/logo4.png" style="height:100px; width:110px" alt="w3docs logo"></a>
+      <a class="navbar-brand px-2" href="#">  <h1 style="color: white; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">Library Application</h1> </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" routerLink="/mybooks" style="font-size:larger;">BOOKS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/addbook" style="font-size:larger;">ADD BOOK</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" class="btn" (click)="logoutUser()" style="font-size:larger;color:black">LOGOUT </a>
+          </li>
+        </ul>
+        <!-- <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form> -->
+      </div>
+     
+    </div>
+  </nav>

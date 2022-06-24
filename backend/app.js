@@ -6,6 +6,16 @@ const cors=require('cors');
 const jwt = require("jsonwebtoken");
 const PORT = process.env.PORT || 4400;
 
+
+mongoose.connect(
+  'mongodb+srv://dream:library@cluster0.uq5mq.mongodb.net/test', 
+  {
+    useNewUrlParser: true,
+    useFindAndModify: false,
+    useUnifiedTopology: true
+  }
+);
+
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 app.use(cors());

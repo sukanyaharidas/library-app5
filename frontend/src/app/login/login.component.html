@@ -1,0 +1,32 @@
+
+<app-header></app-header>
+
+
+<form [formGroup]="form" (ngSubmit)="loginUser()">
+    <h3>Login</h3><br>
+    <!-- Email input -->
+    <div class="form-outline form-group">
+      <input type="text" id="form2Example1" class="form-control" formControlName="email" name="email" [(ngModel)]="User.email" placeholder="Email Address"/>
+      <label class="form-label" for="form2Example1"></label>
+      <span class="error text-danger" *ngIf="form.get('email').invalid && form.get('email').touched">Email is invalid</span>
+    </div>
+    <div class="form-outline form-group">
+      <input type="password" id="form2Example2" class="form-control" formControlName="password" name="password" [(ngModel)]="User.password" placeholder="Password" />
+      <label class="form-label" for="form2Example2" ></label>
+      <span class="error text-danger" *ngIf="form.get('password').invalid && form.get('password').touched">Password Required</span>
+
+    </div>
+    <div class="row">
+      <div class="col d-flex justify-content-center">
+      </div>
+      <div class="col">
+        <a href="#!">Forgot password?</a>
+      </div>
+    </div>
+    <button type="submit" [disabled]="!form.valid" class="btn btn-primary btn-block ">Sign in</button>
+    <div class="text-center"  style="padding-top:1em">
+      <p>Not a member? <a routerLink="/signup">Register</a></p>
+    </div>
+  </form>
+<app-footer></app-footer>
+  

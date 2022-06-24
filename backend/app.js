@@ -4,12 +4,12 @@ const bookData=require ('./book');
 const app=new express();
 const cors=require('cors');
 const jwt = require("jsonwebtoken");
+const PORT = process.env.PORT || 4400;
 
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 app.use(cors());
-email="admin"
-password="1234"
+
 
 app.post('/signup',function(req,res){
     res.header("Access-Control-Allow-Origin", "*");
@@ -173,4 +173,6 @@ app.post("/login", (req, res) => {
 });
 
 
-app.listen("4400");
+app.listen(PORT, () => {
+  console.log('Running on ${PORT}');
+});

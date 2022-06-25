@@ -18,10 +18,10 @@ app.use(cors());
 app.use(express.static('./dist/frontend'));
 
 
-app.get('/*', (req, res)=> {
+app.get("/*", (req, res)=> {
   res.sendFile(path.join(__dirname + '/dist//frontend/index.html'))})
 
-app.post('/api/signup',function(req,res){
+app.post("/api/signup",function(req,res){
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Methods:GET,POST,PUT,DELETE");
     var data={
@@ -33,58 +33,7 @@ app.post('/api/signup',function(req,res){
  _auth.save();
 });
 
-// app.post("/login", (req, res) => {
-//     res.header("Access-Control-Allow-Origin", "*");
-//     res.header("Access-Control-Allow-Method:GET,POST,PUT,DELETE");
-   
-// let userData=req.body;
 
-// if(!email){
-//     res.status(401).send("invalid email")
-// }
-// else if(password!==userData.password){
-//     res.status(401).send("invalid password")
-// }
-// else{
-//     res.status(200).send();
-// }
-
-//   });
-
-
-
-// app.post("/login", (req, res) => {
-//     res.header("Access-Control-Allow-Origin", "*");
-//     res.header("Access-Control-Allow-Method:GET,POST,PUT,DELETE");
-//     credentials
-//     .findOne({ email: req.body.email, password: req.body.password },(err,user)=>{
-//       if(err){
-//         console.log("error is",err)
-//       }
-//       else{
-//         console.log(user)
-//       }
-//     }).clone()
-//     .then((user) => {
-//       if(user !== null){
-//       let payload = { subject: user.email + user.password };
-//       let token = jwt.sign(payload, "secretKey");
-//       res.status(200).send({ token });
-//       }
-//       else{
-//         res.status(401).send('Wrong Credentials')
-//       }
-//     });
-  
-//   });
-
-
-// app.post("/login", (req, res) =>{
-//     authData.find()
-// }
-
-
-// )
 
 
 app.post("/api/login", (req, res) => {
@@ -115,7 +64,7 @@ app.post("/api/login", (req, res) => {
 
 
   // CRUD operations
-  app.post('/api/addbook',function(req,res){
+  app.post("/api/addbook",function(req,res){
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Methods:GET,POST,PUT,DELETE");
     var bookdata={
@@ -127,7 +76,7 @@ app.post("/api/login", (req, res) => {
  _book.save();
 });
 
-  app.get('/api/mybooks', function(req,res){
+  app.get("/api/mybooks", function(req,res){
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Methods:GET,POST,PUT,DELETE");
 
@@ -138,7 +87,7 @@ app.post("/api/login", (req, res) => {
   })
 
 
-  app.delete('/api/delete/:id',function(req,res){
+  app.delete("/api/delete/:id",function(req,res){
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Methods:GET,POST,PUT,DELETE");
     console.log(req.params.id);
@@ -152,7 +101,7 @@ app.post("/api/login", (req, res) => {
 
    
 
-  app.get('/api/:id', function(req,res){
+  app.get("/api/:id", function(req,res){
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Methods:GET,POST,PUT,DELETE");
 
@@ -164,7 +113,7 @@ app.post("/api/login", (req, res) => {
   
   })
 
-  app.put('/api/edit',function(req,res){
+  app.put("/api/edit",function(req,res){
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Methods:GET,POST,PUT,DELETE");
 

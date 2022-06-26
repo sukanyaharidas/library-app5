@@ -18,9 +18,6 @@ app.use(cors());
 app.use(express.static('./dist/frontend'));
 
 
-app.get("/*", (req, res)=> {
-  res.sendFile(path.join(__dirname + '/dist//frontend/index.html'))})
-
 app.post("/api/signup",function(req,res){
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Methods:GET,POST,PUT,DELETE");
@@ -131,6 +128,8 @@ app.post("/api/login", (req, res) => {
 
 });
 
+app.get("/*", (req, res)=> {
+  res.sendFile(path.join(__dirname + '/dist//frontend/index.html'))})
 
 app.listen(PORT, () => {
   console.log(`Running on ${PORT}`);

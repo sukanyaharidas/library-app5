@@ -1,6 +1,12 @@
 const mongoose=require('mongoose');
-mongoose.connect("mongodb://localhost:27017/Library");
 const Schema=mongoose.Schema;
+
+const DB = "mongodb+srv://dream:dream@cluster0.uq5mq.mongodb.net/Library?retryWrites=true&w=majority";
+mongoose.connect(DB,{ useNewUrlParser: true, useUnifiedTopology: true}).then(()=>{
+ console.log("Database Connection Successful")
+}).catch((err)=>{
+ console.log(err)
+})
 
 const authSchema=new Schema({
     fullName: String,
